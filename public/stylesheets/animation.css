@@ -1,0 +1,59 @@
+.indexin{
+	animation-duration: 0.8s;
+  	animation-name: indexin;
+}
+
+@keyframes indexin {
+	from {
+		opacity: 0;
+		padding-bottom: 30%;
+	}
+
+	to {
+		opacity: 1;
+		padding-bottom: 0;
+	}
+}
+
+.slideout{
+	animation-duration: 0.8s;
+  	animation-name: slideout;
+}
+
+@keyframes slideout {
+	from {
+		padding-bottom: 0;
+	}
+
+	to {
+		padding-bottom: 30%;
+	}
+}
+
+.slidein{
+	animation-duration: 0.8s;
+  	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		padding-top: 30%;
+	}
+
+	to {
+		padding-top: 0;
+	}
+}
+
+.spin{
+	animation: spin;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes spin{
+	100%{
+		transform: rotate(360deg);
+	}
+}

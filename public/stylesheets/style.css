@@ -1,0 +1,578 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);*/
+
+body {
+	font-family: 'Noto Sans KR', sans-serif!important;
+  	padding: 50px;
+}
+
+/* Azonix */
+@font-face {
+  font-family: 'Azonix';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Azonix.otf');
+}
+
+/* debug */
+@media (min-width: 992px){
+	.container{
+		max-width: 1140px!important;
+	}
+}
+
+.logo{
+	font-family: 'Azonix', sans-serif!important;
+	font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 50px;
+}
+
+.search{
+	border-radius: 25px!important;
+	border: 2px solid!important;
+	width: 18rem!important;
+}
+
+.searchbar{
+	background-color: inherit!important;
+	color: white!important;
+	border: none!important;
+}
+
+.searchicon{
+	background-color: inherit;
+	border: none;
+	color: white!important;
+	line-height: 19px;
+	padding-right: 12px;
+}
+
+.indexwrap{
+	height: 91vh;
+	display: -ms-flexbox;
+    display: flex;
+}
+
+.brand{
+	font-family: 'Azonix', sans-serif!important;
+	font-weight: bold;
+    letter-spacing: 2px;
+	color: #CED0DA;
+	transition: color .25s;
+}
+
+.brand:hover, .brand:focus, .brand:active{
+	color: #777d98;
+}
+
+.result{
+	background-color: #242435!important;
+    border-color: rgba(0, 0, 0, 0.125)!important;
+	width: 100%;
+	color: #CED0DA;
+	font-weight: 500;
+}
+
+.resultarea{
+	padding: 1.25rem 0;
+}
+
+.bg-alpha{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.summary{
+	background-color: #242435;
+	border-radius: 15px;
+	margin: 0 15px;
+	padding: 5px;
+	height: 90px;
+}
+
+.icon{
+	border-radius: 100%;
+    width: 100px;
+	margin: 15px;
+}
+
+#level{
+	position: absolute;
+    left: 50%;
+    top: 103px;
+    background-color: #181823;
+    transform: translate(-50%, 0);
+    border-radius: 20%;
+    border: 1.5px solid;
+    width: 35px;
+    height: 20px;
+    line-height: 16px;
+    font-size: 13px;
+	padding-left: 1px;
+}
+
+.tier{
+	height: 60px;
+}
+
+#soloTier, #freeTier{
+	font-size: 12px;
+}
+
+.infotitle{
+	font-size: 12px;
+}
+
+.match{
+	padding: 12px 0 12px 0;
+}
+
+.match.win{
+	background-color: #2b2f52;
+}
+
+.match.lose{
+	background-color: #522b2b;
+}
+
+.detailinfo.win{
+	background-color: rgba(34, 35, 64, 0.3);
+}
+
+.detailinfo.lose{
+	background-color: rgba(82, 43, 43, 0.3);
+}
+
+.wininfo, .gameinfo, .userinfo, .junglerinfo, .vs, .detail{
+	text-align: center;
+}
+
+.gameinfo, .userinfo{
+	position: relative;
+}
+
+.userinfo{
+	margin-right: 10px;
+}
+
+.gameDuration{
+	font-size: 12px;
+}
+
+.centerwrapper{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.margin{
+	height: 15px;
+}
+
+/* 챔피언 이미지 */
+.champion{
+	border-radius: 100%;
+}
+
+.user .champion{
+	height: 50px;
+}
+
+.player .champion{
+	height: 18px;
+	display: block;
+}
+
+.jungler .champion{
+	height: 40px;
+}
+
+.junglerdetail .champion{
+	height: 50px;
+	margin-top: -42px;
+	margin-right: 3px;
+}
+
+/* 스펠 이미지 */
+.spell1, .spell2{
+	height: 24px;
+	display: block;
+}
+
+.spell1{
+	margin-bottom: 2px;
+}
+
+.vsimg{
+	height: 20px;
+}
+
+.lane{
+	height: 20px;
+}
+
+/* 자세히 보기 */
+
+.kda{
+	text-align: center;
+	font-size: 18px;
+	margin-top: 35px;
+}
+
+.kda-ratio{
+	font-weight: 400;
+    font-size: 13px;
+}
+
+.ratio{
+	font-weight: 500;
+}
+
+.ratio-high{
+	color: #5fab5b;
+}
+
+.ratio-medium{
+	color: #a9ab5b;
+}
+
+.ratio-low{
+	color: #ab5b5b;
+}
+
+.poschart{
+	transform: translate(-19%, 0);
+}
+
+.detailinfo{
+	padding: 10px!important;
+	overflow-x: hidden;
+}
+
+.detail-sm{
+
+}
+
+.junglerdetail{
+	text-align: center;
+}
+
+.badgeinfo{
+	min-height: 24px;
+	text-align: center;
+}
+
+.badge{
+	margin: 0 5px;
+	color: #CED0DA;
+}
+
+.badge-kill{
+	background-color: #651a1a;
+}
+
+.badge-assist{
+	background-color: #654e1a;
+}
+
+.badge-object{
+	background-color: #1a6532;
+}
+
+.dragon{
+	height: 23px;
+	margin: 0 5px;
+}
+
+.iteminfo{
+	text-align: center;
+	margin: 7px 0;
+}
+
+.item{
+	width: 34px;
+	height: 34px;
+	margin: 0 1.2px;
+}
+
+.lastitem{
+	margin-right: 0;
+}
+
+.champion.mvp{
+	border: 2px solid #c3a537;
+}
+
+.star{
+	position: absolute;
+    left: 40%;
+    top: 41px;
+    background-color: #c3a537;
+    transform: translate(-50%, 0);
+    border-radius: 20%;
+    width: 16px;
+    height: 13px;
+    line-height: 12px;
+    font-size: 10px;
+    color: #FDFD96;
+}
+
+.chartinfo{
+	padding: 10px!important;
+}
+
+.playerinfo{
+	line-height: 18px;
+	font-weight: 400;
+}
+
+.junglerinfo{
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.player .name{
+	display: inline-block;
+	max-width: 75px;
+}
+
+.detailinfo .name{
+	text-align: center;
+	font-size: 13px;
+}
+
+.championimage{
+	display: inline-block;
+	margin-right: 3px;
+}
+
+.name .overflow{
+	display: block;
+	font-size: 12px;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.detailicon{
+	padding-left: 5px;
+}
+
+.detailbtn{
+	background-color: inherit;
+	border: none;
+	color: #a2a4ad;
+	font-weight: 500;
+	transition: color .25s;
+}
+
+.detailbtn:hover{
+	color: #dadce6;
+}
+
+.update{
+    position: absolute;
+    top: 10px;
+    right: 58px;
+}
+
+.copy{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.custombtn{
+	border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, 
+		background-color 0.15s ease-in-out, 
+		border-color 0.15s ease-in-out, 
+		box-shadow 0.15s ease-in-out;
+	background-color: inherit;
+    border: 1px solid #CED0DA;
+    color: #CED0DA;
+	font-size: 17px;
+	width: 31px;
+	height: 31px;
+	padding: 0;
+}
+
+.custombtn:hover, .custombtn.active{
+	color: #222233;
+	background-color: #CED0DA!important;
+}
+
+.fa-sync-alt, .fa-copy{
+	line-height: 27px!important;
+	width: 27px;
+	height: 27px;
+}
+
+.detailtext{
+	display: inline;
+}
+
+.tap{
+	background-color: inherit!important;
+	border:none!important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3)!important;
+	border-radius: 0!important;
+	width: 100%!important;
+	color: #CED0DA!important;
+}
+
+.tap:hover, .tap:active, .tap:focus, .active{
+	background-color: #29293e!important;
+}
+
+.matchdetail{
+    margin-bottom: 5px;
+	overflow-y: hidden;
+	transition: max-height 1s;
+}
+
+.matchdetail.in{
+	max-height: 585px;
+}
+
+.matchdetail.out{
+	max-height: 0px;
+	border-bottom: none;
+}
+
+.col-1-5{
+	-ms-flex: 0 0 12%;
+    flex: 0 0 12%;
+    width: 12%;
+    max-width: 12%;
+}
+
+.col-0-5{
+	-ms-flex: 0 0 4%;
+    flex: 0 0 4%;
+    width: 4%;
+    max-width: 4%;
+}
+
+.footer{
+	color: #ffffff5c;
+	font-size: 11px;
+	padding: 1.5rem 0;
+}
+
+.url{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: inherit;
+}
+
+.alert{
+	cursor: pointer;
+	position: fixed!important;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+}
+
+/* 스탯 */
+.stat{
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.stat-subtitle{
+	font-size: 12px;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+.stat-title{
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.stat-chart-title{
+	text-align: center;
+}
+
+.stat-margin{
+	width: 100%;
+	height: 15px;
+}
+
+/* 타임라인 */
+.timeline{
+	padding: 20px;
+	font-weight: 400;
+    font-size: 14px;
+}
+
+.timeline-line{
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 75px;
+    height: 100%;
+    width: 4px;
+    background: #e9ecef;
+    border-radius: .25rem;
+}
+
+.timeline-dot{
+	position: absolute;
+	left: -55px;
+    top: 13.5px;
+	background-color: #202030;
+}
+
+.timeline-element{
+	position: relative;
+	margin-left: 90px;
+	margin-bottom: 15px;
+	padding: 15px;
+	background-color: #242435;
+	border-radius: 10px;
+}
+
+.timeline-content{
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.timeline-title{
+	line-height: 40px;
+}
+
+.timeline-time{
+	position: absolute;
+	left: -105px;
+	top: 9.5px;
+}
+
+.timeline-champion{
+	height: 40px;
+	border: 2px solid;
+	margin: 0 3px 0 3px;
+}
+
+.timeline-assist{
+	height: 20px;
+	border-radius: 100%;
+	margin: 0 3px 0 3px;
+}
+
+.friendly{
+	border-color: #5c64a9;
+}
+
+.enemy{
+	border-color: #a05757;
+}

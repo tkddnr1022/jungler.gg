@@ -1,0 +1,187 @@
+doctype html
+html
+	head
+		meta(http-equiv="Content-Security-Policy", content="upgrade-insecure-requests")
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/mdb.min.css')
+		link(rel='icon', href='/images/favicon.png')
+		link(rel='shortcut icon', href='/images/favicon.png')
+		script(src="/javascripts/mdb.min.js")
+		script(src="/javascripts/query.js")
+		script(src="/socket.io/socket.io.js")
+		script(src="https://code.jquery.com/jquery-3.5.1.min.js", integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=", crossorigin="anonymous")
+		script.
+			var done = 0;
+			var socket = io();
+			socket.emit('loadSummoner', get_query().name); //- 서버로부터 정보 불러오기 위해 emit
+
+			function discon(){
+				if(done == 2){ //- 완료를 기다릴 이벤트 : league, match
+					socket.emit('discon', done);
+				}
+			}
+
+			function update(){
+				var socket = io();
+				socket.emit('updateSummoner', get_query().name);
+			}
+
+			function loadSummonerInfo(data){
+				$("#name").text(data.name);
+				$("#level").text(data.level);
+				$("#icon").text(data.icon);
+				$("#id").text(data.id);
+			}
+
+			function loadRankInfo(data){
+				if(data.solo != null){
+					$("#soloTier").text(data.solo.tier);
+					$("#soloRank").text(data.solo.rank);
+					$("#soloPoint").text(data.solo.point);
+					$("#soloWin").text(data.solo.win);
+					$("#soloLose").text(data.solo.lose);
+				}
+
+				if(data.free != null){
+					$("#freeTier").text(data.free.tier);
+					$("#freeRank").text(data.free.rank);
+					$("#freePoint").text(data.free.point);
+					$("#freeWin").text(data.free.win);
+					$("#freeLose").text(data.free.lose);
+				}
+			}
+
+			function loadMatchInfo(data){
+				for(var i=0; i<data.match.length; i++){
+					var f = $(".fJungler:eq("+i+")");
+					var e = $(".eJungler:eq("+i+")");
+					f.find(".champion").text(data.match[i].detail.fJungler[0].champion);
+					f.find(".posTop").text(data.match[i].detail.fJungler[0].posTop);
+					f.find(".posMid").text(data.match[i].detail.fJungler[0].posMid);
+					f.find(".posBot").text(data.match[i].detail.fJungler[0].posBot);
+
+					e.find(".champion").text(data.match[i].detail.eJungler[0].champion);
+					e.find(".posTop").text(data.match[i].detail.eJungler[0].posTop);
+					e.find(".posMid").text(data.match[i].detail.eJungler[0].posMid);
+					e.find(".posBot").text(data.match[i].detail.eJungler[0].posBot);
+				}
+
+				console.log(data);
+			}
+
+			socket.on('error', function(err){
+				console.log(err);
+			});
+
+			socket.on('db', function(data){
+				loadSummonerInfo(data);
+				loadRankInfo(data);
+				loadMatchInfo(data);
+
+				socket.emit('discon', 1);
+			});
+
+			socket.on('summoner', function(data){ //- 기본 정보 얻기
+				loadSummonerInfo(data);
+			});
+
+			socket.on('league', function(data){ //- 랭크 정보 얻기
+				loadRankInfo(data);
+
+				done++;
+				discon();
+			});
+
+			socket.on('match', function(data){ //- 기본 정보 얻기
+				loadMatchInfo(data);
+
+				done++;
+				discon();
+			});
+
+				
+	body
+		block content
+		
+		//- 기본정보
+		p
+			span name:&nbsp;
+			span#name -
+		p
+			span level:&nbsp;
+			span#level -
+		p
+			span icon:&nbsp;
+			span#icon -
+		p
+			span id:&nbsp;
+			span#id -
+			
+		//- 솔로랭크정보
+		p
+			span soloTier:&nbsp;
+			span#soloTier -
+		p
+			span soloRank:&nbsp;
+			span#soloRank -
+		p
+			span soloPoint:&nbsp;
+			span#soloPoint -
+		p
+			span soloWin:&nbsp;
+			span#soloWin -
+		p
+			span soloLose:&nbsp;
+			span#soloLose -
+			
+		//- 자유랭크정보
+		p
+			span freeTier:&nbsp;
+			span#freeTier -
+		p
+			span freeRank:&nbsp;
+			span#freeRank -
+		p
+			span freePoint:&nbsp;
+			span#freePoint -
+		p
+			span freeWin:&nbsp;
+			span#freeWin -
+		p
+			span freeLose:&nbsp;
+			span#freeLose -
+			
+			//- 매치정보
+		
+			
+		- for(i=0; i<3; i++){
+			.fJungler
+				p
+					span champion:&nbsp;
+					span.champion -
+				p
+					span posTop:&nbsp;
+					span.posTop -
+				p
+					span posMid:&nbsp;
+					span.posMid -
+				p
+					span posBot:&nbsp;
+					span.posBot -
+			.eJungler
+				p
+					span champion:&nbsp;
+					span.champion -
+				p
+					span posTop:&nbsp;
+					span.posTop -
+				p
+					span posMid:&nbsp;
+					span.posMid -
+				p
+					span posBot:&nbsp;
+					span.posBot -
+		- }
+		
+		

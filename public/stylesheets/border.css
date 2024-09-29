@@ -1,0 +1,79 @@
+#icon #level{
+	border-color: #CED0DA;
+}
+
+#icon .icon{
+	box-shadow: 0 0 5px 1px #CED0DA;
+}
+
+#icon[tier='IRON'] #level{
+	border-color: #2d1914;
+}
+
+#icon[tier='IRON'] .icon{
+	box-shadow: 0 0 5px 1px #2d1914;
+}
+
+#icon[tier='BRONZE'] #level{
+	border-color: #775546;
+}
+
+#icon[tier='BRONZE'] .icon{
+	box-shadow: 0 0 5px 1px #775546;
+}
+
+#icon[tier='SILVER'] #level{
+	border-color: #98aeb3;
+}
+
+#icon[tier='SILVER'] .icon{
+	box-shadow: 0 0 5px 1px #98aeb3;
+}
+
+#icon[tier='GOLD'] #level{
+	border-color: #d39a48;
+}
+
+#icon[tier='GOLD'] .icon{
+	box-shadow: 0 0 5px 1px #d39a48;
+}
+
+#icon[tier='PLATINUM'] #level{
+	border-color: #0ed066;
+}
+
+#icon[tier='PLATINUM'] .icon{
+	box-shadow: 0 0 5px 1px #0ed066;
+}
+
+#icon[tier='DIAMOND'] #level{
+	border-color: #702fe8;
+}
+
+#icon[tier='DIAMOND'] .icon{
+	box-shadow: 0 0 5px 1px #702fe8;
+}
+
+#icon[tier='MASTER'] #level{
+	border-color: #ec06f3;
+}
+
+#icon[tier='MASTER'] .icon{
+	box-shadow: 0 0 5px 1px #ec06f3;
+}
+
+#icon[tier='GRANDMASTER'] #level{
+	border-color: #7c0001;
+}
+
+#icon[tier='GRANDMASTER'] .icon{
+	box-shadow: 0 0 5px 1px #7c0001;
+}
+
+#icon[tier='CHALLENGER'] #level{
+	border-color: #fdc167;
+}
+
+#icon[tier='CHALLENGER'] .icon{
+	box-shadow: 0 0 5px 1px #fdc167;
+}

@@ -1,0 +1,42 @@
+/* Tooltip text */
+.tooltiptext {
+  	opacity: 0;
+    white-space: nowrap;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 0 7px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 38px;
+    left: -4px;
+    font-size: 14px;
+	transition: opacity .25s;
+}
+
+.update .tooltiptext.expend{
+    left: -15px;
+}
+
+.copy .tooltiptext.expend{
+    left: -21px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tip:hover + .tooltiptext, .tip.active + .tooltiptext {
+  opacity: 1;
+}
+
+.tooltiptext::after {
+	content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    transform: rotate(180deg);
+}
+}
